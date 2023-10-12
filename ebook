@@ -1,0 +1,47 @@
+class Ebook:
+    def __init__(self, titolo, autore, prezzo, formato, data_pubblicazione):
+        self.titolo = titolo
+        self.autore = autore
+        self.prezzo = prezzo
+        self.formato = formato
+        self.data_pubblicazione = data_pubblicazione
+
+class NegozioEbook:
+    def __init__(self):
+        self.ebook_disponibili = []
+
+    def aggiungi_ebook(self, ebook):
+        self.ebook_disponibili.append(ebook)
+
+    def cerca_ebook(self, titolo):
+        risultati = [ebook for ebook in self.ebook_disponibili if titolo.lower() in ebook.titolo.lower()]
+        return risultati
+
+    def acquista_ebook(self, ebook):
+        if ebook in self.ebook_disponibili:
+            self.ebook_disponibili.remove(ebook)
+            return ebook
+        else:
+            return None
+
+if __name__ == "__main__":
+    negozio = NegozioEbook()
+
+    ebook1 = Ebook("Il Piccolo Principe", "Antoine de Saint-Exupéry", 9.99, "PDF", "1943")
+    ebook2 = Ebook("Crimini e Punizioni", "Fëdor Dostoevskij", 7.99, "EPUB", "1866")
+    ebook3 = Ebook("1984", "George Orwell", 8.49, "MOBI", "1949")
+
+    negozio.aggiungi_ebook(ebook1)
+    negozio.aggiungi_ebook(ebook2)
+    negozio.aggiungi_ebook(ebook3)
+
+    ricerca = negozio.cerca_ebook("1984")
+    for ebook in ricerca:
+        print(f"Titolo: {ebook.titolo}, Autore: {ebook.autore}, Prezzo: {ebook.prezzo} €")
+
+    acquisto = negozio.acquista_ebook(ebook3)
+    if acquisto:
+        print(f"Hai acquistato l'ebook '{acquisto.titolo}' al prezzo di {acquisto.prezzo} €.")
+    else:
+        print("L'ebook non è disponibile.")
+
