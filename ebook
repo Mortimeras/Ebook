@@ -16,14 +16,18 @@ class NegozioEbook:
     def cerca_ebook(self, titolo):
         risultati = [ebook for ebook in self.ebook_disponibili if titolo.lower() in ebook.titolo.lower()]
         return risultati
-
+  ebook1 = Ebook("Il Piccolo Principe", "Antoine de Saint-Exupéry", 9.99, "PDF", "1943")
+    ebook2 = Ebook("Crimini e Punizioni", "Fëdor Dostoevskij", 7.99, "EPUB", "1866")
+    ebook3 = Ebook("1984", "George Orwell", 8.49, "MOBI", "1949")
     def acquista_ebook(self, ebook):
         if ebook in self.ebook_disponibili:
             self.ebook_disponibili.remove(ebook)
             return ebook
         else:
             return None
-
+  ebook1 = Ebook("Il Piccolo Principe", "Antoine de Saint-Exupéry", 9.99, "PDF", "1943")
+    ebook2 = Ebook("Crimini e Punizioni", "Fëdor Dostoevskij", 7.99, "EPUB", "1866")
+    ebook3 = Ebook("1984", "George Orwell", 8.49, "MOBI", "1949")
 if __name__ == "__main__":
     negozio = NegozioEbook()
 
