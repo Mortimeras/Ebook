@@ -39,7 +39,13 @@ if __name__ == "__main__":
     negozio.aggiungi_ebook(ebook2)
     negozio.aggiungi_ebook(ebook3)
 
-    ricerca = negozio.cerca_ebook("1984")
+    ebook4 = Ebook("Il Piccolo Principe", "Antoine de Saint-Exupéry", 9.99, "PDF", "1943")
+    ebook2\5 = Ebook("Crimini e Punizioni", "Fëdor Dostoevskij", 7.99, "EPUB", "1866")
+    ebook6 = Ebook("1984", "George Orwell", 8.49, "MOBI", "1949")
+    ricerc
+    ebook11 = Ebook("Il Piccolo Principe", "Antoine de Saint-Exupéry", 9.99, "PDF", "1943")
+    ebook22 = Ebook("Crimini e Punizioni", "Fëdor Dostoevskij", 7.99, "EPUB", "1866")
+    ebook33 = Ebook("1984", "George Orwell", 8.49, "MOBI", "1949")a = negozio.cerca_ebook("1984")
     for ebook in ricerca:
         print(f"Titolo: {ebook.titolo}, Autore: {ebook.autore}, Prezzo: {ebook.prezzo} €")
 
