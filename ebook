@@ -6,6 +6,9 @@ class Ebook:
         self.formato = formato
         self.data_pubblicazione = data_pubblicazione
 
+    def __str__(self):
+        return f"Titolo: {self.titolo}, Autore: {self.autore}, Prezzo: {self.prezzo} €"
+
 class NegozioEbook:
     def __init__(self):
         self.ebook_disponibili = []
@@ -38,7 +41,7 @@ if __name__ == "__main__":
     ricerca = negozio.cerca_ebook("1984")
     if ricerca:
         for ebook in ricerca:
-            print(f"Titolo: {ebook.titolo}, Autore: {ebook.autore}, Prezzo: {ebook.prezzo} €")
+            print(ebook)
 
         acquisto = negozio.acquista_ebook(ebook3)
         if acquisto:
