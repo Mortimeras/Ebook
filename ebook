@@ -7,16 +7,7 @@ class Ebook:
         self.data_pubblicazione = data_pubblicazione
 
     def __str__(self):
-        return f"Titolo: {self.titolo}, Autore: {self.autore}, Prezzo: {self.prezzo} €"
-
-class NegozioEbook:
-    def __init__(self):
-        self.ebook_disponibili = []
-
-    def aggiungi_ebook(self, ebook):
-        self.ebook_disponibili.append(ebook)
-
-    def cerca_ebook(self, titolo):
+        return f"Titolo: {self.titolo}, Autore
         risultati = [ebook for ebook in self.ebook_disponibili if titolo.lower() in ebook.titolo.lower()]
         return risultati if risultati else None
 
